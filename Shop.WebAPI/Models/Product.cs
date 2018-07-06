@@ -16,6 +16,8 @@ namespace ReactTemplate.WebAPI.Models
     {
         public System.Guid Id { get; set; }
         public string Name { get; set; }
-        public Nullable<double> Price { get; set; }
+        public double Price { get; set; }
+        public Nullable<double> OldPrice { get; set; }
+        public bool IsNew { get; set; }
     }
 }

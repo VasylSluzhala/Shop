@@ -122,8 +122,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\ShopDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ShopDB.Context.cs</LastGenOutput>
       <DependentUpon>ShopDB.edmx</DependentUpon>
+      <LastGenOutput>ShopDB.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ShopDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

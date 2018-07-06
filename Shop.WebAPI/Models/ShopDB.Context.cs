@@ -13,10 +13,10 @@ namespace ReactTemplate.WebAPI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ShopDBEntities : DbContext
+    public partial class ShopEntities : DbContext
     {
-        public ShopDBEntities()
-            : base("name=ShopDBEntities")
+        public ShopEntities()
+            : base("name=ShopEntities")
         {
         }
     

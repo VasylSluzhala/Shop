@@ -14,7 +14,7 @@ namespace ReactTemplate.WebAPI.Controllers
 {
     public class ProductsController : ApiController
     {
-        private ShopDBEntities db = new ShopDBEntities();
+        private ShopEntities db = new ShopEntities();
 
         // GET: api/Products
         public IQueryable<Product> GetProduct()

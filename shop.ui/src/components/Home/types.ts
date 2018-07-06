@@ -6,3 +6,19 @@ export interface IHomeProps {
     products: any,
     fetchProducts: any
 }
+
+export interface IProductItemContainerProps {
+    products: IProduct[]
+}
+
+export interface IProductItemProps {
+    product: IProduct
+}
+
+export interface IProduct {
+    Id: any,
+    Name: string,
+    Price: number,
+    OldPrice: number,
+    IsNew: boolean
+}
