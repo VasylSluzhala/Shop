@@ -110,7 +110,7 @@ class Home extends React.Component<IHomeProps, {}> {
         						</div>
         						<div className="md-margin"></div>
 
-                                <ProductItemContainer products={this.props.products}/>
+                                <ProductItemContainer products={this.props.products} cartItems={this.props.cartItems}/>
 
 
 
@@ -411,7 +411,7 @@ class Home extends React.Component<IHomeProps, {}> {
 }
 
 function mapStateToProps(state){
-    return { products: state.products }
+    return { products: state.products, cartItems: state.cart }
 }
 
 export default connect(mapStateToProps, {fetchProducts})(Home);

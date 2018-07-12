@@ -1,6 +1,9 @@
 import * as React from 'react';
+import {ICartProps} from './types';
+import { connect } from 'react-redux';
+import CartContainer from './CartContainer';
 
-class Cart extends React.Component {
+class Cart extends React.Component<ICartProps, {}> {
 
     public render() {
         return (
@@ -21,99 +24,9 @@ class Cart extends React.Component {
                                 <p className="title-desc">Just this week, you can use the free premium delivery.</p>
                             </header>
                             <div className="xs-margin"></div>
-                            <div className="row">
+                            
+                            <CartContainer cartItems={this.props.cartItems}/>
 
-                                <div className="col-md-12 table-responsive">
-
-                                    <table className="table cart-table">
-                                        <thead>
-                                            <tr>
-                                                <th className="table-title">Product Name</th>
-                                                <th className="table-title">Product Code</th>
-                                                <th className="table-title">Unit Price</th>
-                                                <th className="table-title">Quantity</th>
-                                                <th className="table-title">SubTotal</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td className="item-name-col">
-                                                    <figure>
-                                                        <a href="#"><img src="images/products/compare1.jpg" alt="Lowlands Lace Blouse" /></a>
-                                                    </figure>
-                                                    <header className="item-name"><a href="#">Lowlands Lace Blouse</a></header>
-                                                    <ul>
-                                                        <li>Color: White</li>
-                                                        <li>Size: SM</li>
-                                                    </ul>
-                                                </td>
-                                                <td className="item-code">MP125984154</td>
-                                                <td className="item-price-col"><span className="item-price-special">$1175</span></td>
-                                                <td>
-                                                    <div className="custom-quantity-input">
-                                                        <input type="text" name="quantity" value="1" />
-                                                        <a href="#" className="quantity-btn quantity-input-up"><i className="fa fa-angle-up"></i></a>
-                                                        <a href="#" className="quantity-btn quantity-input-down"><i className="fa fa-angle-down"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td className="item-total-col"><span className="item-price-special">$1175</span>
-                                                    <a href="#" className="close-button"></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="item-name-col">
-                                                    <figure>
-                                                        <a href="#"><img src="images/products/compare2.jpg" alt="Samsung Galaxy Ace" /></a>
-                                                    </figure>
-                                                    <header className="item-name"><a href="#">Samsung Galaxy Ace</a></header>
-                                                    <ul>
-                                                        <li>Color: Black</li>
-                                                        <li>Size: XL</li>
-                                                    </ul>
-                                                </td>
-                                                <td className="item-code">MP125984154</td>
-                                                <td className="item-price-col"><span className="item-price-special">$1475</span></td>
-                                                <td>
-                                                    <div className="custom-quantity-input">
-                                                        <input type="text" name="quantity" value="1" />
-                                                        <a href="#" className="quantity-btn quantity-input-up"><i className="fa fa-angle-up"></i></a>
-                                                        <a href="#" className="quantity-btn quantity-input-down"><i className="fa fa-angle-down"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td className="item-total-col"><span className="item-price-special">$1475</span>
-                                                    <a href="#" className="close-button"></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="item-name-col">
-                                                    <figure>
-                                                        <a href="#"><img src="images/products/compare3.jpg" alt="Iphone Case Cover Original" /></a>
-                                                    </figure>
-                                                    <header className="item-name"><a href="#">Iphone Case Cover Original</a></header>
-                                                    <ul>
-                                                        <li>Color: White</li>
-                                                        <li>Size: SM</li>
-                                                    </ul>
-                                                </td>
-                                                <td className="item-code">MP125984154</td>
-                                                <td className="item-price-col"><span className="item-price-special">$399</span></td>
-                                                <td>
-                                                    <div className="custom-quantity-input">
-                                                        <input type="text" name="quantity" value="3" />
-                                                        <a href="#" className="quantity-btn quantity-input-up"><i className="fa fa-angle-up"></i></a>
-                                                        <a href="#" className="quantity-btn quantity-input-down"><i className="fa fa-angle-down"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td className="item-total-col"><span className="item-price-special">$1197</span>
-                                                    <a href="#" className="close-button"></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
-                            </div>
                             <div className="lg-margin"></div>
 
                             <div className="row">
@@ -451,4 +364,8 @@ class Cart extends React.Component {
     }
 }
 
-export default Cart;
+function mapStateToProps(state){
+    return { cartItems: state.cart }
+}
+
+export default connect(mapStateToProps)(Cart);

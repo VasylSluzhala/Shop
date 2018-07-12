@@ -4243,6 +4243,7 @@ parent's font-size:0
 	padding:10px 16px;
 	font-weight:bold;
 	font-size:13px;
+	cursor: pointer;
 }
 
 .item .item-action .item-action-inner {
