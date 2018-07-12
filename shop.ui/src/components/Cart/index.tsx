@@ -2,6 +2,7 @@ import * as React from 'react';
 import {ICartProps} from './types';
 import { connect } from 'react-redux';
 import CartContainer from './CartContainer';
+import CartTotalCounter from './CartTotalCounter';
 
 class Cart extends React.Component<ICartProps, {}> {
 
@@ -104,34 +105,8 @@ class Cart extends React.Component<ICartProps, {}> {
 
                                 </div>
 
-                                <div className="col-md-4 col-sm-12 col-xs-12">
+                                <CartTotalCounter cartItems={this.props.cartItems}/>
 
-                                    <table className="table total-table">
-                                        <tbody>
-                                            <tr>
-                                                <td className="total-table-title">Subtotal:</td>
-                                                <td>$434.50</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="total-table-title">Shipping:</td>
-                                                <td>$6.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="total-table-title">TAX (0%):</td>
-                                                <td>$0.00</td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td>Total:</td>
-                                                <td>$440.50</td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                    <div className="md-margin"></div>
-                                    <a href="#" className="btn btn-custom-2">CONTINUE SHOPPING</a>
-                                    <a href="#" className="btn btn-custom">CHECKOUT</a>
-                                </div>
                             </div>
                             <div className="md-margin2x"></div>
 

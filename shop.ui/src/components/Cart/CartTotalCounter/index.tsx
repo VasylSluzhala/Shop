@@ -1,6 +1,10 @@
+import _ from 'lodash';
 import * as React from 'react';
 
-class CartTotalCounter extends React.Component{
+import { ITotalCounterProps } from '../types';
+
+class CartTotalCounter extends React.Component<ITotalCounterProps>{
+    
     public render() {
         return (
             <div className="col-md-4 col-sm-12 col-xs-12">
@@ -9,7 +13,7 @@ class CartTotalCounter extends React.Component{
                     <tbody>
                         <tr>
                             <td className="total-table-title">Subtotal:</td>
-                            <td>$434.50</td>
+                            <td>${this.countSubtotal()}</td>
                         </tr>
                         <tr>
                             <td className="total-table-title">Shipping:</td>
@@ -23,7 +27,7 @@ class CartTotalCounter extends React.Component{
                     <tfoot>
                         <tr>
                             <td>Total:</td>
-                            <td>$440.50</td>
+                            <td>${this.countSubtotal()}</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -32,6 +36,14 @@ class CartTotalCounter extends React.Component{
                 <a href="#" className="btn btn-custom">CHECKOUT</a>
             </div>
         );
+    }
+
+    private countSubtotal(){
+        let sum = 0;
+        _.forOwn(this.props.cartItems, (value) => {
+            sum += value.item.Price * value.amount;
+        });
+        return _.round(sum);
     }
 }
 

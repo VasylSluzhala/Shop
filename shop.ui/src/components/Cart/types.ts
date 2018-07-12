@@ -12,5 +12,5 @@ export interface ICartContainerProps{
 }
 
 export interface ITotalCounterProps{
-    cartItems: ICartItemProps[]
+    cartItems: ICartItemProps
 }

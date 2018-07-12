@@ -35,7 +35,7 @@ constructor(props) {
                         <a onClick={()=> this.props.substractFromCart(this.props.item)} className="quantity-btn quantity-input-down"><i className="fa fa-angle-down"></i></a>
                     </div>
                 </td>
-                <td className="item-total-col"><span className="item-price-special">${_.max([this.props.amount, 1]) * this.props.item.Price}</span>
+                <td className="item-total-col"><span className="item-price-special">${_.round(_.max([this.props.amount, 1]) * this.props.item.Price, 2)}</span>
                     <a href="#" className="close-button"></a>
                 </td>
             </tr>
